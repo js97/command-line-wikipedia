@@ -21,9 +21,14 @@ def wiki_search(word):
 		#this area still requires a fix. Some warnings about BeautifulSoup's html parser come up, as well as suggest() seems to always return None type
 		#catches case where wiki returns a list rather than a single wiki page
 		#will use wiki's best suggestion instead
-		wiki_page = wiki.suggest(search_result_list[int(user_choice)-1])
+		
+
+
+		#wiki_page = wiki.suggest(search_result_list[int(user_choice)-1])
 		#print(wiki.suggest(search_result_list[int(user_choice)-1]))
-		print(wiki_page)
+		#print(wiki_page)
+		print('Something isn\'t working.')
+		
 
 
 def main():
