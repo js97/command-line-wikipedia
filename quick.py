@@ -1,6 +1,6 @@
 import wikipedia as wiki
 import argparse
-
+import summary_tool
 
 def wiki_search(word):
 	search_result_list = wiki.search(word, results=5)
@@ -11,12 +11,20 @@ def wiki_search(word):
 		count = count+1
 	user_choice = input('\n>>')
 	try:
-		str_to_print = (search_result_list[int(user_choice)-1]+
-						":\n\n"+
-						wiki.summary(search_result_list[int(user_choice)-1])+
-						"\n\n")
+		search_result = search_result_list[int(user_choice)-1]
+		title = search_result
+		page = wiki.page(search_result)
+		page_content = page.content
+		st = summary_tool.SummaryTool()
+		sentences_dic = st.get_sentences_ranks(page_content)
+		summary = st.get_summary(title, page_content, sentences_dic)
+		print (summary)
+		#str_to_print = (search_result_list[int(user_choice)-1]+
+					#	":\n\n"+
+					#	wiki.summary(search_result_list[int(user_choice)-1])+
+					#	"\n\n")
 		#set the above string to a variable before printing to allow for exception to be thrown before printing
-		print(str_to_print)
+		#print(str_to_print)
 	except wiki.exceptions.DisambiguationError as e:
 		#this area still requires a fix. Some warnings about BeautifulSoup's html parser come up, as well as suggest() seems to always return None type
 		#catches case where wiki returns a list rather than a single wiki page
