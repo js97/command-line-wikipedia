@@ -107,42 +107,5 @@ class SummaryTool(object):
 
         return ("\n").join(summary)
 
-def main():
-
-    # Demo
-    # Content from: "http://thenextweb.com/apps/2013/03/21/swayy-discover-curate-content/"
-
-    title = """
-    Charles Barkley
-    """
-
-    content = """
-    Charles Wade Barkley (born February 20, 1963) is an American retired professional basketball player and current analyst on the television program Inside the NBA. Nicknamed "Chuck", "Sir Charles", and "The Round Mound of Rebound", Barkley established himself as one of the National Basketball Association's dominant power forwards.[1] An All-American center at Auburn, he was drafted as a junior by the Philadelphia 76ers with the 5th pick of the 1984 NBA draft. He was selected to the All-NBA First Team five times, the All-NBA Second Team five times, and once to the All-NBA Third Team. He earned eleven NBA All-Star Game appearances and was named the All-Star MVP in 1991. In 1993, he was voted the league's Most Valuable Player and during the NBA's 50th anniversary, named one of the 50 Greatest Players in NBA History. He competed in the 1992 and 1996 Olympic Games and won two gold medals as a member of the United States' "Dream Team". Barkley is a two-time inductee into the Naismith Memorial Basketball Hall of Fame, being inducted in 2006 for his individual career, and in 2010 as a member of the "Dream Team".[2][3]
-
-Barkley was popular with the fans and media and made the NBA's All-Interview Team for his last 13 seasons in the league.[1] He was frequently involved in on- and off-court fights and sometimes stirred national controversy, as in March 1991 when he spat on a young girl while attempting to spit at a heckler,[4] and as in 1993 when he declared that sports figures should not be considered role models. Short for a power forward, Barkley used his strength and aggressiveness to become one of the NBA's most dominant rebounders. He was a versatile player who had the ability to score, create plays, and defend. In 2000, he retired as the fourth player in NBA history to achieve 20,000 points, 10,000 rebounds and 4,000 assists.[5]
-
-Since retiring as a player, Barkley has had a successful career as a television NBA analyst. He works with Turner Network Television (TNT) alongside of Shaquille O'Neal, Kenny Smith, and Ernie Johnson as a studio pundit for its coverage of NBA games[6] and is a spokesman for CDW. In addition, Barkley has written several books and has shown an interest in politics; in October 2008, he announced that he would run for Governor of Alabama in 2014,[7] but he changed his mind in 2010.
-    """
-
-    # Create a SummaryTool object
-    st = SummaryTool()
-
-    # Build the sentences dictionary
-    sentences_dic = st.get_sentences_ranks(content)
-
-    # Build the summary with the sentences dictionary
-    summary = st.get_summary(title, content, sentences_dic)
-
-    # Print the summary
-    print (summary)
-
-    # Print the ratio between the summary length and the original length
-    print("")
-    print("Original Length %s" % (len(title) + len(content)))
-    print ("Summary Length %s" % len(summary))
-    print ("Summary Ratio: %s" % (100 - (100 * (len(summary) / (len(title) + len(content))))))
-
-if __name__ == '__main__':
-    main()
 
 
