@@ -1,5 +1,5 @@
 # quick-search
-Summarizes wikipedia articles.
+Command line tool to provide ankle-deep mile-wide summary of any wikipedia topic. 
 
 # dependencies
 wikipedia
@@ -10,5 +10,4 @@ re
 
 # usage
 git clone https://github.com/js97/wiki-briefing.git
-
-python3 quick.py --term <term to get briefed on>
+python3 quick.py --term TERM
