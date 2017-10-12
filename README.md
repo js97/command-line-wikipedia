@@ -10,4 +10,5 @@ re
 
 # usage
 git clone https://github.com/js97/wiki-briefing.git
+
 python3 quick.py --term TERM
