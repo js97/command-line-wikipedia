@@ -7,4 +7,5 @@ argparse
 re
 
 # usage
-python3 quick.py
+git clone https://github.com/js97/wiki-briefing.git
+python3 quick.py --term <term to get briefed on>
